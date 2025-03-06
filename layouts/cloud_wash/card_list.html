@@ -1,0 +1,33 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+
+  <section class="section">
+    <div class="container">
+      <div class="row gx-5">
+        <!-- blog posts -->
+        <div class=" ">
+          <div class="row">
+            {{/*{{ $paginator:= .Paginate .RegularPages }}*/}}
+            {{/*{{ $paginator:= .Paginate .RegularPagesRecursive }}*/}}
+            {{/*weight 从大到小排序 */}}
+            {{/*{{ $paginator:= .Paginate .Sections.ByWeight.Reverse }}*/}}
+            {{ $paginator:= .Paginate .Sections.ByWeight }}
+            {{ range $paginator.Pages }}
+              <div class=" mb-10">
+                {{/*{{ partial "components/blog-card" . }}*/}}
+                <h4 class="mb-3 text-center">
+                  <a href="{{ .RelPermalink }}">
+                    {{ .Title }}
+                  </a>
+                </h4>
+              </div>
+            {{ end }}
+          </div>
+          {{ partial "components/pagination.html" . }}
+        </div>
+
+      </div>
+    </div>
+  </section>
+{{ end }}
