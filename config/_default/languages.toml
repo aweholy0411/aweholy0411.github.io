@@ -1,0 +1,13 @@
+################ English language ##################
+#[en]
+#languageName = "En"
+#languageCode = "en-us"
+#contentDir = "content/english"
+#weight = 1
+################ TW language ##################
+[tw]
+languageName = "Tw"
+languageCode = "zh-tw"
+#contentDir = "content/tw"
+contentDir = "content"
+weight = 1

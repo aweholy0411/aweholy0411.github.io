@@ -1,0 +1,181 @@
+############# zh-tw  menus .tw extension,  navigation ##############
+
+# main menu
+[[main]]
+name = "首頁"
+url = "/"
+weight = 1
+
+
+
+
+
+
+[[main]]
+name = "每日QT"
+url = "/everyday_qt"
+weight = 2
+
+    [[main]]
+    parent = "每日QT"
+    name = "QT 2025"
+    url = "/everyday_qt/2025"
+    weight = 1
+
+    [[main]]
+    parent = "每日QT"
+    name = "QT 2024"
+    url = "/everyday_qt/2024"
+    weight = 10
+
+    [[main]]
+    parent = "每日QT"
+    name = "QT 2023"
+    url = "/everyday_qt/2023"
+    weight = 20
+
+    [[main]]
+    parent = "每日QT"
+    name = "QT 2022"
+    url = "/everyday_qt/2022"
+    weight = 30
+
+    [[main]]
+    parent = "每日QT"
+    name = "QT 2021"
+    url = "/everyday_qt/2021"
+    weight = 40
+
+    [[main]]
+    parent = "每日QT"
+    name = "QT 2020"
+    url = "/everyday_qt/2020"
+    weight = 50
+
+    [[main]]
+    parent = "每日QT"
+    name = "QT 2019"
+    url = "/everyday_qt/2019"
+    weight = 60
+
+    [[main]]
+    parent = "每日QT"
+    name = "QT 2018"
+    url = "/everyday_qt/2018"
+    weight = 70
+
+    [[main]]
+    parent = "每日QT"
+    name = "QT 2016~2017"
+    url = "/everyday_qt/2016-2017"
+    weight = 80
+
+
+
+
+
+
+
+
+
+
+
+
+
+[[main]]
+name = "雲彩見證"
+url = "/cloud_wash"
+weight = 20
+
+
+    [[main]]
+    parent = "雲彩見證"
+    name = "受洗見證"
+    url = "/cloud_wash/wash_prove"
+    weight = 10
+
+
+    [[main]]
+    parent = "雲彩見證"
+    name = "生活故事"
+    url = "/cloud_wash/life_story"
+    weight = 30
+
+
+
+
+
+
+
+
+
+
+
+
+[[main]]
+name = "一對一門訓"
+url = "/train/train121"
+weight = 30
+
+
+[[main]]
+name = "深淵響應"
+url = "/deep_res"
+weight = 40
+
+
+
+
+
+
+
+#[[main]]
+#name = "Elements"
+#url = "/elements"
+#weight = 3
+#
+#[[main]]
+#weight = 4
+#name = "Pages"
+#
+#[[main]]
+#parent = "Pages"
+#name = "Blog"
+#url = "/blog"
+#
+#[[main]]
+#parent = "Pages"
+#name = "Contact"
+#url = "/contact"
+#
+#[[main]]
+#parent = "Pages"
+#name = "Authors"
+#url = "/authors"
+#
+#[[main]]
+#parent = "Pages"
+#name = "Categories"
+#url = "/categories"
+#
+#[[main]]
+#parent = "Pages"
+#name = "404 Page"
+#url = "/404"
+
+
+# footer menu
+#[[footer]]
+#name = "Home"
+#url = "/"
+#weight = 1
+#
+#[[footer]]
+#name = "About"
+#url = "/about"
+#weight = 2
+#
+#[[footer]]
+#name = "Work"
+#url = "/work"
+#weight = 3

@@ -1,0 +1,29 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  {{ $paginator:= .Paginate .RegularPages }}
+  {{/*{{ $paginator:= .Paginate .RegularPagesRecursive }}*/}}
+  {{/*weight 从大到小排序 */}}
+  {{/*{{ $paginator:= .Paginate .Sections.ByWeight.Reverse }}*/}}
+
+  <section class="section">
+    <div class="container">
+      {{ range $paginator.Pages }}
+        <div class=" row  items-center justify-center mb-5 ">
+
+          <div class="md:col-4 lg:col-4 ">
+            {{/*{{ partial "components/blog-card" . }}*/}}
+            <a class="a-orange" href="{{ .RelPermalink }}" >
+              <strong  class="text-xl">{{ .Title }}</strong>
+            </a>
+          </div>
+        </div>
+      {{ end }}
+
+      {{ partial "components/pagination.html" . }}
+
+    </div>
+
+
+  </section>
+{{ end }}

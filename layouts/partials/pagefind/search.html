@@ -1,0 +1,9 @@
+<link href={{ relLangURL "/pagefind/pagefind-ui.css" }} rel="stylesheet">
+<script src={{ relLangURL "/pagefind/pagefind-ui.js" }}></script>
+
+<div id="pageFindSearch"></div>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    new PagefindUI({ element: "#pageFindSearch", showSubResults: true });
+  });
+</script>

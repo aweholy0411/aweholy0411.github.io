@@ -1,0 +1,103 @@
+.circle-3d-images-wrap {
+    /* 弹性布局 让页面元素水平+垂直居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 让页面始终占浏览器总高 */
+    /*height: 100vh;*/
+
+    overflow: hidden;
+    margin: 0 auto;
+
+    background-color: #000;
+    /* 视距 让元素看起来更有3D效果 */
+    perspective: 900px;
+}
+
+.circle-3d-images{
+    /* 相对定位 */
+    position: relative;
+    /*width: 300px;*/
+    /*height: 200px;*/
+    /* 鼠标放到元素上变成小手 */
+    cursor: pointer;
+    /* 让子元素保留其3D位置 */
+    transform-style: preserve-3d;
+    /* 动画 名称 时长 linear 是匀速 播放 infinite 是无限次播放 */
+    animation: circleRrotate 20s linear infinite;
+}
+
+
+.circle-3d-images:hover {
+    /* 鼠标放到元素上停止动画 */
+    animation-play-state: paused;
+}
+.circle-3d-images .img-circle-item {
+    /* 绝对定位 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: 100%;
+    text-align: center;
+    /*background-color: #c14c39;*/
+    /*background-color: #c14c39;*/
+    /* 设置元素的倒影效果 below 是倒影效果在元素下方 15px 是元素和倒影的距离 后面的属性和背景渐变色是一个属性 设置了一个从下到上由背景透明色过渡到设置了不透明度的白色 */
+    -webkit-box-reflect: below 15px -webkit-linear-gradient(transparent 10%, rgba(255, 255, 255, 0.3));
+}
+
+.circle-3d-images div a, .circle-3d-images div img {
+    width: 100%;
+}
+
+.img-circle-desc{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-weight: bold;
+    /*background-color: black;*/
+    color: #000;
+    font-size: .8rem;
+}
+
+
+/*固定6个图片*/
+/*
+
+.circle-3d-images div:nth-child(1) {
+    transform: translateZ(300px);
+    background-color: #c14c39;
+}
+.circle-3d-images div:nth-child(2) {
+    transform: rotateY(60deg) translateZ(300px);
+    background-color: #6e9c72;
+}
+.circle-3d-images div:nth-child(3) {
+    transform: rotateY(120deg) translateZ(300px);
+    background-color: #5e5f7a;
+}
+.circle-3d-images div:nth-child(4) {
+    transform: rotateY(180deg) translateZ(300px);
+    background-color: #f5eb98;
+}
+.circle-3d-images div:nth-child(5) {
+    transform: rotateY(240deg) translateZ(300px);
+    background-color: #50a3bc;
+}
+.circle-3d-images div:nth-child(6) {
+    transform: rotateY(300deg) translateZ(300px);
+    background-color: #f9a99a;
+}
+*/
+
+
+
+/* 先定义旋转动画 */
+@keyframes circleRrotate {
+    0% {
+        transform: rotateY(0);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}

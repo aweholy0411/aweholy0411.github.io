@@ -1,0 +1,92 @@
+{{ define "main" }}
+
+
+{{ $siteScope := .Site }}
+{{/* 获取最新的4篇文章 */}}
+{{/* 默认按weight排序， weight值是article的id， 越大越后  */}}
+{{ $latest_qt_pages := last 4 ( where ( where .Site.RegularPages "Section" "everyday_qt" ) "IsPage" true ) }}
+
+{{/*--- {{ len .Params.wash_prove_items }} ---
+--- {{ $item := index $latest_qt_pages  0}} ---
+
+  {{$item.LinkTitle }}--
+  {{$item.CurrentSection }}--
+  {{$item.Section }}--
+  {{$item.IsSection }}--
+  {{$item.IsPage }}--
+  {{$item.File }}--*/}}
+
+
+
+
+
+<section class=" pt-14">
+  <div class="container">
+
+
+
+    <div class="row items-center justify-center">
+      <div class="md:col-6 lg:col-6 mb-8">
+        {{ partial "image" (dict "Src" "/images/home1.webp" "Alt" ""  ) }}
+      </div>
+    </div>
+
+
+    <div class="row items-center justify-center">
+      <div class="orange-title text-center pt-10 pb-10">城市宣培中心 遍傳有機教會</div>
+      <div class="md:col-6 lg:col-6 mb-8">
+        <p class=" pb-10">秉持聖經一個城市、一間教會的真理。建立一個以五重職事團隊配搭的「使徒中心」，連結城市中其他的使徒中心，在城市中每一個家庭、職場、學校…，團隊開拓、扶持、牧養、堅固城市中無數的有機教會。</p>
+
+          <p>教會的成立是為了培訓差傳門徒團隊，轉化城市、轉化人心，打破以宗派設立的宗教高牆、宗教業績，使人心歸向真神、多結果子、迎主再來！</p>
+      </div>
+    </div>
+
+
+    <div class="row items-center justify-center">
+      <div class="orange-title text-center pt-10 pb-10">每日QT</div>
+      <div class="md:col-6 lg:col-6 mb-8">
+        <div class="row items-center justify-center">
+
+          {{ range $latest_qt_pages}}
+            <div class="md:col-3 lg:col-3 mb-8">
+              <div><img /></div>
+              <div class="flex items-center justify-center"><a class="a-orange  font-bold" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="row items-center justify-center">
+      <div class="orange-title text-center pt-10 pb-10">受洗見證</div>
+
+      <div class="md:col-6 lg:col-6 mb-8">
+        <div class="row items-center justify-center">
+          {{ range .Params.wash_prove_items}}
+            {{ $path := .path }}
+            {{ $image := .image }}
+            {{ with $siteScope.GetPage $path }}
+              <div class="md:col-3 lg:col-3 mb-8">
+                <div class="flex items-center justify-center"><img style="width: 145px; height: 200px;" src="{{ $image }}" /></div>
+                <div class="mt-7 flex items-center justify-center" style="height: 5rem;"><a class="a-orange font-bold" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></div>
+              </div>
+            {{ end }}
+
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</section>
+
+
+
+{{/*{{ .Content }}*/}}
+
+{{ end }}

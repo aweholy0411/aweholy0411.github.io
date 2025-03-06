@@ -1,0 +1,35 @@
+/* Add your own custom styles here */
+.navbar-brand .img {
+    width: 50px;
+    height: 50px;
+}
+
+.gallery-item {
+    position: relative;
+}
+.character-desc {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-weight: bold;
+}
+
+.orange-title {
+    color: #ff6600;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.a-orange:hover {
+    color: #ff6600;
+}
+
+
+
+
+
+/* 非手机 */
+@media (min-width: 461px) {
+    .zodiac-list-item .gallery-item {
+        width: 20% !important;
+    }
+}
