@@ -58,7 +58,7 @@ jobs:
       # npx pagefind --site "public"
       - name: Create pagefind index
         run: |
-          npx pagefind_extended --site "public"
+          npx pagefind --site "public"
       
 
       # 部署
