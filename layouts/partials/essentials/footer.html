@@ -1,13 +1,18 @@
 
 <footer class="bg-light dark:bg-darkmode-light">
 
-  <div class="border-border dark:border-darkmode-border border-t py-7">
+  <div class="border-border dark:border-darkmode-border border-t py-7 relative">
     <div
       class="text-text-light dark:text-darkmode-text-light container text-center">
       <p>
         {{ site.Params.copyright | markdownify }}
       </p>
     </div>
+
+    <span class="absolute" style="right: 1rem; bottom: 2rem;" >
+      <a href="#" class="back-to-top"><span class="button_icon"><i class="fas fa-chevron-up fa-1x"></i></span></a>
+    </span>
+
   </div>
 
 </footer>

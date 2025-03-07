@@ -51,9 +51,14 @@ jobs:
         run: |
           echo "Hugo Cache Dir: $(hugo config | grep cachedir)"
           hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
-      
-      
-      
+
+      # https://pagefind.app/docs/installation/
+      # create pagefind index
+      # pagefind --site public
+      # npx pagefind --site "public"
+      - name: Create pagefind index
+        run: |
+          npx pagefind_extended --site "public"
       
 
       # 部署

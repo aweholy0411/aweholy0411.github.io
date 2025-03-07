@@ -43,6 +43,16 @@
       {{ block "main" . }}{{ end }}
     </main>
 
+    <div class="container mb-20 ">
+      <div class="row justify-center">
+        <div class="lg:col-7">
+          <div ><strong>搜尋</strong></div>
+          {{ partial "pagefind/search.html" . }}
+        </div>
+      </div>
+    </div>
+
+
     <!-- footer -->
     {{ partial "essentials/footer.html" . }}
 

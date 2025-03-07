@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聖經閱讀進度記錄</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .container { width: 60%; text-align: left; margin-left: 40px; padding-left: 40px; }
+        .section-title { font-size: 26px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; }
+        .book { margin-bottom: 20px; font-size: 22px; font-weight: bold; }
+        .old-testament { color: green; }
+        .new-testament { color: red; }
+        .chapter { display: inline-block; margin: 5px; padding: 8px; cursor: pointer; border: 1px solid #ccc; font-size: 18px; }
+        .read { background-color: lightgreen; }
+        .progress { font-size: 20px; margin-top: 30px; font-weight: bold; }
+        .book strong { font-size: 24px; }
+        button { margin-top: 10px; padding: 10px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>📖 聖經進度記錄</h1>
+    <div id="app"></div>
+</div>
+
+{{ .Content }}
+
+</body>
+</html>

@@ -71,6 +71,13 @@ weight = 2
     weight = 80
 
 
+    [[main]]
+    parent = "每日QT"
+    name = "聖經進度記錄表"
+    url = "/bibletracker"
+    weight = 90
+
+
 
 
 

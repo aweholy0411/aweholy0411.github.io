@@ -5,15 +5,18 @@
   <section class="section-sm">
     <div class="container">
       <div class="row justify-center">
-        <div class="lg:col-10">
+        <div class="lg:col-7">
+
+          {{ $image:= .Params.feature_image }}
+          {{ if $image }}
+            {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mb-6 w-full rounded") }}
+          {{ end }}
+
           <div class="content">
             {{ .Content }}
           </div>
 
-          <div class="mt-20 ">
-            <div ><strong>搜尋</strong></div>
-            {{ partial "pagefind/search.html" . }}
-          </div>
+
         </div>
       </div>
     </div>

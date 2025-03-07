@@ -2,32 +2,45 @@
   {{ partial "page-header" . }}
 
 
+  {{/* 获取有图片的wash文章, 分类属于 雲彩見證 */}}
+  {{/* 默认按weight排序， weight值是article的id， 越大越后  */}}
+  {{/*{{ $latest_qt_pages := last 4 ( where ( where .Site.RegularPages "Section" "cloud_wash" ) "IsPage" true ) }}*/}}
+
+
+  {{/*{{ $category := slice "雲彩見證"  }}*/}}
+  {{/*{{ $wash_pages :=  where .Site.RegularPages "Section" "cloud_wash"   }}*/}}
+  {{/*{{ $wash_pages = where  $wash_pages "Params.categories" "intersect" $category }}*/}}
+  {{/*{{ $item := index $wash_pages  1}}
+   --- {{ len $wash_pages }} ---
+   --- {{ $item }} ---
+   --- {{ $item.Params.categories }} ---*/}}
+
+
+  {{/*weight 从大到小排序 */}}
+  {{ $paginator:= .Paginate .RegularPagesRecursive.ByWeight.Reverse }}
+  {{/*{{ $paginator:= .Paginate .RegularPages }}*/}}
+
+
+
+
+
   <section class="section">
     <div class="container">
-      <div class="row gx-5">
-        <!-- blog posts -->
-        <div class=" ">
-          <div class="row">
-            {{/*{{ $paginator:= .Paginate .RegularPages }}*/}}
-            {{/*{{ $paginator:= .Paginate .RegularPagesRecursive }}*/}}
-            {{/*weight 从大到小排序 */}}
-            {{/*{{ $paginator:= .Paginate .Sections.ByWeight.Reverse }}*/}}
-            {{ $paginator:= .Paginate .Sections.ByWeight }}
-            {{ range $paginator.Pages }}
-              <div class=" mb-10">
-                {{/*{{ partial "components/blog-card" . }}*/}}
-                <h4 class="mb-3 text-center">
-                  <a href="{{ .RelPermalink }}">
-                    {{ .Title }}
-                  </a>
-                </h4>
-              </div>
-            {{ end }}
+
+
+      {{ range $paginator.Pages }}
+        <div class=" row  items-center justify-center mb-5 ">
+          <div class="md:col-6 lg:col-6 mb-10">
+            {{ partial "components/wash-card" . }}
           </div>
-          {{ partial "components/pagination.html" . }}
+        </div>
+      {{ end }}
+
+        <div>
+        {{ partial "components/pagination.html" . }}
         </div>
 
-      </div>
+
     </div>
   </section>
 {{ end }}
